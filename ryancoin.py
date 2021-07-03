@@ -9,9 +9,12 @@ class Block:
 
     def calculate_hash():
       #calculate the cryptographic hash of every block
-      block_of_string = "{}{}{}{}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
+      block_of_string = "{}{}{}{}{}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
 
       return hashlib.sha256(block_of_string.encode()).hexidigest)
+		
+		def __repr__(self):
+			return "{} - {} - {} - {} - {}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
       
 class Blockchain:
   def __init__(self):

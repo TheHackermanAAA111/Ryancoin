@@ -17,19 +17,28 @@ class Block:
 		return "{} - {} - {} - {} - {}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
       
 class Blockchain:
-  def __init__(self):
+	def __init__(self):
 		#construct method
-    self.chain=[]
-    self.current_data = []
-    self.nodes = set()
-    self.construct_genesis(self)
-
+		self.chain=[]
+		self.current_data = []
+		self.nodes = set()
+		self.construct_genesis()
+		
 	def construct_genesis(self):
 		#consruct the inital block
-	pass
+		self.construct_block(proof_no=0,prev_hash=0)
+
 	def construct_block(self,proof_no,prev_hash):
 		#construct a new block and adds it to chain
-	pass
+		block = Block(
+									index=len(self.chain),
+									proof_no=proof_no,
+									prev_hash=prev_hash,
+									data=self.current_data)
+		self.current_data=[]
+		self.chain.append(block)
+		return block
+
 	@staticmethod
   def check_validity():
 		#check whether the blockchain is vaild

@@ -42,10 +42,21 @@ class Blockchain:
 	@staticmethod
   def check_validity():
 		#check whether the blockchain is vaild
-	pass
+    if prev_block.index + 1 != block.index:
+      return False
+    elif prev_block.calculate_hash != block.prev_hash:
+      return False
+    elif not Blockchain.verifiying_proof(block.proof_no, prev_block.proof_no):
+      return False
+    elif block.timestamp <= prev_block.timestamp:
+      return False
+
+    #passed all tests HOORAY
+    return True
   def new_data(self, sender, recipient, quantity):
 		#adds a new transaction to the data of the transactions
-	pass
+
+	
   @staticmethod
   def construct_proof_of_work(prev_proof):
 		#protects the blockchain from attack

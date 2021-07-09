@@ -14,3 +14,10 @@ BITCOIN BUT BY RYAN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - prev_has: hash of the previous block
 - data: record of all transaction completed
 - timestamp: place timestamp for the transaction
+
+######Blockchain breakdown
+#######Roles of Attributes:
+- self.chain is key to all the blocks
+- self.current_data: keeps all the completed transactions
+- self.construct_genesis(): method takes care of constructing the intitial block of the chain
+- just the construct_block method

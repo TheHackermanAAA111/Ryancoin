@@ -19,7 +19,11 @@ class Block:
 class Blockchain:
   def __init__(self):
 		#construct method
-		pass
+    self.chain=[]
+    self.current_data = []
+    self.nodes = set()
+    self.construct_genesis(self)
+
 	def construct_genesis(self):
 		#consruct the inital block
 	pass

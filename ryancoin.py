@@ -30,8 +30,7 @@ class Blockchain:
 
 	def construct_block(self,proof_no,prev_hash):
 		#construct a new block and adds it to chain
-		block = Block(
-									index=len(self.chain),
+		block = Block(index=len(self.chain),
 									proof_no=proof_no,
 									prev_hash=prev_hash,
 									data=self.current_data)

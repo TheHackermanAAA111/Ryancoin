@@ -55,12 +55,28 @@ class Blockchain:
 		
 	def new_data(self, sender, recipient, quantity):
 		#adds a new transaction to the data of the transactions
-		return
+        self.current_data.append({
+            'sender': sender,
+            'recipient': recipient,
+            'quantity': quantity
+            })
+		return True
 
 	@staticmethod
 	def construct_proof_of_work(prev_proof):
 		#protects the blockchain from attack
-		return
+        proof_no = 0
+        while Blockchain.verifiying_proof(proof_no,prev_proof) is false:
+            proof_no += 1
+		return proof_no
+
+
+    @staticmethod
+    def verifiying_proof(prev_proof, proof):
+        #does hash(last_proof,proof) contain 4 leading 0's?
+        guess=f'{prev_proof}{proof}'.encode()
+        guess_hash=hashlib.sha256(guess).hexdigest()
+        return guess_hash[:4] == "0000"
 	@property
 	def last_block(self):
 		#returns the last block of the blockchain

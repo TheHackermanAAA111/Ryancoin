@@ -1,5 +1,5 @@
 class Block:
-	def __init__(self, index, proof_no, prev_hash, data, timeStamp=none):
+	def __init__(self, index, proof_no, prev_hash, data, timeStamp=None):
 		#first block class
 		self.index=index
 		self.proof_no = proof_no
@@ -30,8 +30,7 @@ class Blockchain:
 
 	def construct_block(self,proof_no,prev_hash):
 		#construct a new block and adds it to chain
-		block = Block(
-									index=len(self.chain),
+		block = Block(index=len(self.chain),
 									proof_no=proof_no,
 									prev_hash=prev_hash,
 									data=self.current_data)
@@ -40,8 +39,9 @@ class Blockchain:
 		return block
 
 	@staticmethod
-  def check_validity():
+	def check_validity():
 		#check whether the blockchain is vaild
+<<<<<<< HEAD
     if prev_block.index + 1 != block.index:
       return False
     elif prev_block.calculate_hash != block.prev_hash:
@@ -78,5 +78,28 @@ class Blockchain:
     return guess_hash[:4] == "0000"
   @property
   def last_block(self):
+		if prev_block.index + 1 != block.index:
+			return False
+		elif prev_block.calculate_hash != block.prev_hash:
+			return False
+		elif not Blockchain.verifiying_proof(block.proof_no, prev_block.proof_no):
+			return False
+		elif block.timestamp <= prev_block.timestamp:
+			return False
+		
+		#passed all tests HOORAY
+		return True
+		
+	def new_data(self, sender, recipient, quantity):
+		#adds a new transaction to the data of the transactions
+		return
+
+	@staticmethod
+	def construct_proof_of_work(prev_proof):
+		#protects the blockchain from attack
+		return
+	@property
+	def last_block(self):
+>>>>>>> b134db01cff0e03700c586f9e703995664b249d6
 		#returns the last block of the blockchain
 		return self.chain[-1]

@@ -41,7 +41,6 @@ class Blockchain:
 	@staticmethod
 	def check_validity():
 		#check whether the blockchain is vaild
-<<<<<<< HEAD
     if prev_block.index + 1 != block.index:
       return False
     elif prev_block.calculate_hash != block.prev_hash:
@@ -116,6 +115,5 @@ class Blockchain:
         return guess_hash[:4] == "0000"
 	@property
 	def last_block(self):
->>>>>>> b134db01cff0e03700c586f9e703995664b249d6
 		#returns the last block of the blockchain
 		return self.chain[-1]

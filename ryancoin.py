@@ -84,7 +84,7 @@ class Blockchain:
 
 
     @staticmethod
-    def verifiying_proof(prev_proof, proof):
+    def verifying_proof(prev_proof, proof):
         #does hash(last_proof,proof) contain 4 leading 0's?
         guess=f'{prev_proof}{proof}'.encode()
         guess_hash=hashlib.sha256(guess).hexdigest()

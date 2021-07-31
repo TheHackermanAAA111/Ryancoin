@@ -1,9 +1,11 @@
 import hashlib
 import time
+import json
+#import pprint
 
 
 class Block:
-    def __init__(self, index, proof_no, prev_hash, data, timeStamp=None):
+    def __init__(self, index, proof_no,data,prev_hash="0000",timestamp=None):
         #first block class
         self.index=index
         self.proof_no = proof_no
@@ -76,7 +78,7 @@ class Blockchain:
     def construct_proof_of_work(prev_proof):
         #protects the blockchain from attack
         proof_no = 0
-        while Blockchain.verifiying_proof(proof_no,prev_proof) is false:
+        while Blockchain.verifiying_proof(proof_no,prev_proof) is False:
             proof_no += 1
         return proof_no
 

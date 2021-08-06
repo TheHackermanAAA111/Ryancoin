@@ -22,6 +22,34 @@ class Block:
     def __repr__(self):
         return "{} - {} - {} - {} - {}".format(self.index, self.proof_no, self.prev_hash, self.data,self.timestamp)
 
+    #def mining(self, difficulty):
+        # get transaction data from self.data
+
+
+class Transaction:
+    def __init__(self, diff, sender, recipient, value):
+        #construct method
+        self.difficulty = diff
+        self.sender = sender # sender's public key
+        self.recipient = recipient # recipient's public key
+        self.value = value
+        self.time = timestamp
+
+    def to_dict(self):
+        # converts data into dictionary object
+        
+        #setting identity
+        if self.sender == "Genesis":
+            identity = "Genesis"
+        else:
+            identity = self.sender.identity
+
+        return collections.OrderedDict({
+            'sender'    :   identity,
+            'recipient' :    self.recipient,
+            'value' :    self.value,
+            'time'  : self.time})
+
 class Blockchain:
     def __init__(self):
         #construct method

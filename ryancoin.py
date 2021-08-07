@@ -49,6 +49,12 @@ class Transaction:
             'recipient' :    self.recipient,
             'value' :    self.value,
             'time'  : self.time})
+    
+    def sign_transaction(self):
+       private_key = self.sender._private_key #protected variable
+       signer = PKCS1_v1_5.new(private_key)
+       h = SHA.new(str(self.to_dict()).encode('utf8'))
+       return binascii.hexlify(signer.sigh(h)).decode('ascii')
 
 class Blockchain:
     def __init__(self):

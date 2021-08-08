@@ -43,7 +43,7 @@ class Transaction:
 
     def to_dict(self):
         # converts data into dictionary object
-        
+
         #setting identity
         if self.sender == "Genesis":
             identity = "Genesis"
@@ -55,7 +55,7 @@ class Transaction:
             'recipient' :    self.recipient,
             'value' :    self.value,
             'time'  : self.time})
-    
+
     def sign_transaction(self):
        private_key = self.sender._private_key #protected variable
        signer = PKCS1_v1_5.new(private_key)
@@ -84,7 +84,7 @@ class Blockchain:
         self.chain.append(block)
         return block
 
-    # @staticmethod
+    @staticmethod
     def check_validity():
         if prev_block.index +1 != block.index:
             return False

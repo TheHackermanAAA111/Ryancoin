@@ -7,8 +7,13 @@ import pylab as pl
 import logging
 import collections
 import random
-#import pprint
 
+#following imports are required for hashing
+import Crypto
+import Crypto.Random
+from Crypto.Hash import SHA
+from Crypto.PublicKey import RSA
+from Crypto.Signature import PKCS1_v1_5
 
 class Block:
     def __init__(self, index, proof_no,data,prev_hash="0000",timestamp=None):

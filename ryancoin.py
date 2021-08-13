@@ -57,6 +57,7 @@ class Transaction:
             'time'  : self.time})
 
     def sign_transaction(self):
+        # sign dictionary using private key of the sender
        private_key = self.sender._private_key #protected variable
        signer = PKCS1_v1_5.new(private_key)
        h = SHA.new(str(self.to_dict()).encode('utf8'))

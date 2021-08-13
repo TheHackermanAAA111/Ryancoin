@@ -8,13 +8,6 @@ import logging
 import collections
 import random
 
-#following imports are required for hashing
-import Crypto
-import Crypto.Random
-from Crypto.Hash import SHA
-from Crypto.PublicKey import RSA
-from Crypto.Signature import PKCS1_v1_5
-
 class Block:
     def __init__(self, index, proof_no,data,prev_hash="0000",timestamp=None):
         #first block class
@@ -67,6 +60,17 @@ class Transaction:
        signer = PKCS1_v1_5.new(private_key)
        h = SHA.new(str(self.to_dict()).encode('utf8'))
        return binascii.hexlify(signer.sigh(h)).decode('ascii')
+
+    def display_transaction(transaction):
+        diction = transaction.to_dict()
+        print("sender: "+diction['sender'])
+        print('---------------------')
+        print("recipient: "+diction['recipient'])
+        print('---------------------')
+        print("Value: "+str(diction['value']))
+        print('---------------------')
+        print("time: "+str(diction['time']))
+        print('---------------------')
 
 class Blockchain:
     def __init__(self):

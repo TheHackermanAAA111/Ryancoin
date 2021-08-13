@@ -71,7 +71,7 @@ class Blockchain:
         self.construct_genesis()
 
     def construct_genesis(self):
-        #consruct the inital block
+        #construct the initial block
         self.construct_block(proof_no=0,prev_hash=0)
 
     def construct_block(self,proof_no,prev_hash):

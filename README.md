@@ -17,7 +17,7 @@ BITCOIN BUT BY RYAN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - timestamp: place timestamp for the transaction
 
 #### Blockchain breakdown
-##### #Roles of Attributes:
+##### Roles of Attributes:
 - self.chain is key to all the blocks
 - self.current_data: keeps all the completed transactions
 - self.construct_genesis(): method takes care of constructing the intitial block of the chain

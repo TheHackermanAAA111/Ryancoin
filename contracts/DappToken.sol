@@ -8,9 +8,10 @@ contract DappToken{
     // read the total number of tokens
 
     // global var that follows erc-20 standard
-    uint256 public totalSupply // type visibility name
-    function DappToken () public {
-        totalSupply = 1000000;
+    uint256 public totalSupply; // type visibility name
+
+    constructor (uint256 _initialSupply) public {
+        totalSupply = _initialSupply;
     }
 
 

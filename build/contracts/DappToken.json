@@ -1,0 +1,439 @@
+{
+  "contractName": "DappToken",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_initialSupply",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_initialSupply\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DappToken.sol\":\"DappToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/DappToken.sol\":{\"keccak256\":\"0x706b712ba88032659b10a710fe8ce83820433d18c09e37830403fa6e013eb27a\",\"urls\":[\"bzz-raw://5d9627c9179b406c77fb8fb085b9c9318030d1737c60d8696ef7b3fcafaa5d86\",\"dweb:/ipfs/Qmb9AuTtGFHt9tLQTuiegaayQkG9J5YsLV34LsmttC1Qvf\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516100de3803806100de8339818101604052602081101561003357600080fd5b8101908080519060200190929190505050806000819055505060848061005a6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806318160ddd14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a72315820d68b0f24b00346affc14ec0b85e31d7ae81227fe6c20d391b207610df0fc200764736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806318160ddd14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a72315820d68b0f24b00346affc14ec0b85e31d7ae81227fe6c20d391b207610df0fc200764736f6c63430005100032",
+  "sourceMap": "84:319:0:-;;;310:89;8:9:-1;5:2;;;30:1;27;20:12;5:2;310:89:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;310:89:0;;;;;;;;;;;;;;;;378:14;364:11;:28;;;;310:89;84:319;;;;;;",
+  "deployedSourceMap": "84:319:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;84:319:0;;;;;;;;;;;;;;;;;;;253:26;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// declare which version of solidity we are using\npragma solidity >=0.4.22 <0.9.0;\n\ncontract DappToken{\n\n    // constructor\n    // set the total number of tokens\n    // read the total number of tokens\n\n    // global var that follows erc-20 standard\n    uint256 public totalSupply; // type visibility name\n\n    constructor (uint256 _initialSupply) public {\n        totalSupply = _initialSupply;\n    }\n\n\n}\n",
+  "sourcePath": "/Users/g30rg3_cl00n3y/Documents/Tutoring/Ryancoin/contracts/DappToken.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/DappToken.sol",
+    "exportedSymbols": {
+      "DappToken": [
+        14
+      ]
+    },
+    "id": 15,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "50:32:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14,
+        "linearizedBaseContracts": [
+          14
+        ],
+        "name": "DappToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "totalSupply",
+            "nodeType": "VariableDeclaration",
+            "scope": 14,
+            "src": "253:26:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "253:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "354:45:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 8,
+                      "name": "totalSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "364:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9,
+                      "name": "_initialSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "378:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "364:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11,
+                  "nodeType": "ExpressionStatement",
+                  "src": "364:28:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "name": "_initialSupply",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "323:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "323:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "322:24:0"
+            },
+            "returnParameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:0:0"
+            },
+            "scope": 14,
+            "src": "310:89:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15,
+        "src": "84:319:0"
+      }
+    ],
+    "src": "50:354:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/DappToken.sol",
+      "exportedSymbols": {
+        "DappToken": [
+          14
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "50:32:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            14
+          ],
+          "name": "DappToken",
+          "scope": 15
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "totalSupply",
+              "scope": 14,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "253:7:0"
+              }
+            ],
+            "id": 3,
+            "name": "VariableDeclaration",
+            "src": "253:26:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 14,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_initialSupply",
+                      "scope": 13,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4,
+                        "name": "ElementaryTypeName",
+                        "src": "323:7:0"
+                      }
+                    ],
+                    "id": 5,
+                    "name": "VariableDeclaration",
+                    "src": "323:22:0"
+                  }
+                ],
+                "id": 6,
+                "name": "ParameterList",
+                "src": "322:24:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7,
+                "name": "ParameterList",
+                "src": "354:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3,
+                              "type": "uint256",
+                              "value": "totalSupply"
+                            },
+                            "id": 8,
+                            "name": "Identifier",
+                            "src": "364:11:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5,
+                              "type": "uint256",
+                              "value": "_initialSupply"
+                            },
+                            "id": 9,
+                            "name": "Identifier",
+                            "src": "378:14:0"
+                          }
+                        ],
+                        "id": 10,
+                        "name": "Assignment",
+                        "src": "364:28:0"
+                      }
+                    ],
+                    "id": 11,
+                    "name": "ExpressionStatement",
+                    "src": "364:28:0"
+                  }
+                ],
+                "id": 12,
+                "name": "Block",
+                "src": "354:45:0"
+              }
+            ],
+            "id": 13,
+            "name": "FunctionDefinition",
+            "src": "310:89:0"
+          }
+        ],
+        "id": 14,
+        "name": "ContractDefinition",
+        "src": "84:319:0"
+      }
+    ],
+    "id": 15,
+    "name": "SourceUnit",
+    "src": "50:354:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xB2BFA0e6d15CABB6FEF588b022c670dFe8dE1966",
+      "transactionHash": "0x70d52b593d98ef1e5d1c093a1a237c0c3f8cd05f1c946073a64dbf56e9aa5992"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-10T23:54:21.829Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

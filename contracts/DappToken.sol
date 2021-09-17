@@ -10,8 +10,12 @@ contract DappToken{
     // global var that follows erc-20 standard
     uint256 public totalSupply; // type visibility name
 
+    mapping(address => uint256) public balanceOf;
+
+
     constructor (uint256 _initialSupply) public {
         totalSupply = _initialSupply;
+        // allocate the initial supply
     }
 
 

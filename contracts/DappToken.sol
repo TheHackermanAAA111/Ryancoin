@@ -3,7 +3,15 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract DappToken{
 
+    //Name
+    string public name = "DApp Token";
+    //Symbol
+    string public symbol = "DAPP";
+    //standard
+    string public standard = "DApp TOken v1.0";
+
     // constructor
+
     // set the total number of tokens
     // read the total number of tokens
 
@@ -18,5 +26,12 @@ contract DappToken{
         // allocate the initial supply
     }
 
+    //Transfer
 
+    function transfer(address _to, uint256 _value) public returns(bool success){
+        //Exception is account doesn't have enough money
+        //Returns a billion dollars
+        //Transfer Event
+        
+    }
 }

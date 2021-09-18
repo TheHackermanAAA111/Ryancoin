@@ -2,7 +2,20 @@ var DappToken = artifacts.require("./DappToken.sol")
 
 contract('DappToken', function(accounts) {
     var tokenInstance;
-
+    it ('initializes the contract with the correct values', function(){
+        return DappToken.deployed().then(function(instance) {
+            tokenInstance = instance;
+            return tokenInstance.name();
+        }).then(function(name){
+            assert.equal(name, 'DApp Token', 'has the correct name');
+            return tokenInstance.symbol();
+        }).then(function(symbol){
+            assert.equal(symbol, 'DAPP', 'has the correct symbol');
+             return tokenInstance.standard();
+        }).then(function(standard){
+            assert.equal(standard, 'DApp TOken v1.0', 'has the correct standard');
+        });
+    })
     it('sets the total supply upon deployment', function() {
         return DappToken.deployed().then(function(instance){
             tokenInstance = instance;
@@ -14,4 +27,14 @@ contract('DappToken', function(accounts) {
             assert.equal(adminBalance.toNumber(), 1000000, 'it allocates the intial supply to the admin account');
         });
     });
+    it('transfer token ownership', function(){
+        return DappToken.deployed().then(function(instance){
+            tokenInstance = instance;
+            //test 'require' statement first by transferring something larger than the sender's balance
+            return tokenInstance.transfer.call(accounts[1], 9999999999999);
+        }).then(assert.fail).catch(function(error){
+            assert(error.message.indexOf('revert') >= 0, 'error message must contain revert');
+        })
+    });
+
 });

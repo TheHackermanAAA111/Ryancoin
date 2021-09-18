@@ -12,7 +12,6 @@ contract DappToken{
 
     mapping(address => uint256) public balanceOf;
 
-
     constructor (uint256 _initialSupply) public {
         totalSupply = _initialSupply;
         // allocate the initial supply

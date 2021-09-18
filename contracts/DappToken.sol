@@ -27,11 +27,11 @@ contract DappToken{
     }
 
     //Transfer
-
     function transfer(address _to, uint256 _value) public returns(bool success){
         //Exception is account doesn't have enough money
+        require(balanceOf[msg.sender] >= _value);
+        //Transfer amount
         //Returns a billion dollars
         //Transfer Event
-        
     }
 }

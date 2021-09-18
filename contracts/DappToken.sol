@@ -14,7 +14,6 @@ contract DappToken{
 
 
     constructor (uint256 _initialSupply) public {
-        balanceOf[msg.sender] = _initialSupply;
         totalSupply = _initialSupply;
         // allocate the initial supply
     }

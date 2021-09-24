@@ -31,6 +31,8 @@ contract DappToken{
         //Exception is account doesn't have enough money
         require(balanceOf[msg.sender] >= _value);
         //Transfer amount
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
         //Returns a billion dollars
         //Transfer Event
     }

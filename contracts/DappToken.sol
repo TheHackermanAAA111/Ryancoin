@@ -23,6 +23,8 @@ contract DappToken{
         uint256 _value
     );
 
+    //Approval event
+
     mapping(address => uint256) public balanceOf;
 
     constructor (uint256 _initialSupply) public {
@@ -41,5 +43,15 @@ contract DappToken{
         //Transfer Event
         emit Transfer(msg.sender, _to, _value);
         //Returns a billion dollars
+        return true;
     }
+
+    //Delegated Transfers
+
+    //approve
+    function approve(address _spender, uint256 _value) public returns (bool success){
+        
+    }
+    //TransferFrom
+
 }

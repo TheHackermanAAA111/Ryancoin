@@ -34,6 +34,9 @@ contract('DappToken', function(accounts) {
             return tokenInstance.transfer.call(accounts[1], 9999999999999);
         }).then(assert.fail).catch(function(error){
             assert(error.message.indexOf('revert') >= 0, 'error message must contain revert');
+            return tokenInstance.transfer.call(accounts[1], 250000, {from: accounts[0]});
+        }).then(function(success){
+            assert.equal(success, true, 'It returns true');
             return tokenInstance.transfer(accounts[1], 250000, { from: accounts[0]});
         }).then(function(receipt){
             assert.equal(receipt.logs.length, 1, 'triggers one event');
@@ -50,5 +53,16 @@ contract('DappToken', function(accounts) {
             assert.equal(balance.toNumber(), 750000, 'deducts the amount from the sending account');
         });
     });
+    it('approves tokens for delegated transfer', function(){
+        return DappToken.deployed().then(function(instance){
+            tokenInstance = instance();
+            return tokenInstance.approve.call(account[1], 100);
+
+        }).then(function(instance){
+            assert.equal(success, true, 'It returns true');
+        });
+
+    });
+    
 
 });

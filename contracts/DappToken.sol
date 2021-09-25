@@ -23,7 +23,11 @@ contract DappToken{
         uint256 _value
     );
 
-    //Approval event
+    event Approval(
+        address indexed _owner,
+        address indexed _spender,
+        uint256 _value
+    );
 
     mapping(address => uint256) public balanceOf;
 
@@ -47,11 +51,15 @@ contract DappToken{
     }
 
     //Delegated Transfers
-
     //approve
     function approve(address _spender, uint256 _value) public returns (bool success){
-        
+        //allowance
+
+        //Approval event
+        emit Approval(msg.sender,_spender,_value);
+        return true;
     }
+
     //TransferFrom
 
 }

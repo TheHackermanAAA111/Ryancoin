@@ -2,6 +2,7 @@ var DappTokenSale = artifacts.require('./DappTokenSale.sol')
 var DappToken = artifacts.require('./DappToken.sol')
 
 contract('DappTokenSale', function(accounts) {
+    var tokenInstance;
     var tokenSaleInstance;
 
     it('intializes the contract with the correct values', function() {
@@ -11,10 +12,10 @@ contract('DappTokenSale', function(accounts) {
         }).then(function(address) {
             assert.notEqual(address, 0x0, 'has contract address');
             return tokenSaleInstance.tokenContract();
-        }).token(function(address) {
+        }).then(function(address) {
             assert.notEqual(address, 0x0, 'has token contract address');
             return tokenSaleInstance.tokenPrice();
-        }).token(function(price) {
+        }).then(function(price) {
             assert.equal(price, tokenPrice, 'token price is correct');
         });
     });

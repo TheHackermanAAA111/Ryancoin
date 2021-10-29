@@ -5,8 +5,8 @@ import "./DappToken.sol";
 contract DappTokenSale{
     address admin;
     DappToken public tokenContract;
-    uint256 tokenPrice;
-    uint256 tokensSold;
+    uint256 public tokenPrice;
+    uint256 public tokensSold;
 
     constructor (DappToken _tokenContract, uint _tokenPrice) public {
         //assign the admin

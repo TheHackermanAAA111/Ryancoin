@@ -8,6 +8,8 @@ contract DappTokenSale{
     uint256 public tokenPrice;
     uint256 public tokensSold;
 
+    event Sell(address _buyer, uint256 _amount);
+
     constructor (DappToken _tokenContract, uint _tokenPrice) public {
         //assign the admin
     admin = msg.sender;
@@ -28,5 +30,6 @@ contract DappTokenSale{
 
         tokensSold += _numberOfTokens;
 
+        emit Sell(msg.sender, _numberOfTokens);
     }
 }

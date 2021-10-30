@@ -6,9 +6,6 @@ contract('DappTokenSale', function(accounts) {
     var tokenSaleInstance;
     var tokenPrice = 1000000000000000; // in wei
     var tokensAvailable = 750000;
-    var numberOfTokens;
-    var admin = accounts[0];
-    var buyer = accounts[1];
 
     it('intializes the contract with the correct values', function() {
         return DappTokenSale.deployed().then(function(instance) {
@@ -55,8 +52,10 @@ contract('DappTokenSale', function(accounts) {
             // attempt to buy tokens different from ether value
             return tokenSaleInstance.buyTokens(numberOfTokens, {from:buyer, value:1});
         }).then(assert.fail).catch(function(error) {
-            assert(error.message.indexOf('revert') >= 0, 'msg.value must equal number of tokens in wei');
+            ssert(error.message.indexOf('revert') >= 0, 'msg.value must equal number of tokens in wei');
             return tokenSaleInstance.buyTokens(800000, { from: buyer, value: numberOfTokens * tokenPrice })
+        }).then(assert.fail).catch(function(error) {
+            assert(error.message.indexOf('revert') >= 0, 'cannot purchase more tokens than available');
         });
     });
 });

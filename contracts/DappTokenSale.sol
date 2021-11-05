@@ -24,12 +24,17 @@ contract DappTokenSale{
     }
 
     function buyTokens(uint256 _numberOfTokens) public payable {
+        // require value is equal to tokens
         require(msg.value == multiply(_numberOfTokens, tokenPrice));
+        // require contract has enough tokens
         require(tokenContract.balanceOf(address(this)) >= _numberOfTokens);
+        // require transfer is successful
         require(tokenContract.transfer(msg.sender, _numberOfTokens));
 
+        // keep track of tokens sold
         tokensSold += _numberOfTokens;
 
+        //trigger sell event
         emit Sell(msg.sender, _numberOfTokens);
     }
 }

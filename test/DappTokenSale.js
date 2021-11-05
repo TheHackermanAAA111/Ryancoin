@@ -4,8 +4,11 @@ var DappToken = artifacts.require('./DappToken.sol')
 contract('DappTokenSale', function(accounts) {
     var tokenInstance;
     var tokenSaleInstance;
+    var admin = accounts[0];
+    var buyer = accounts[1];
     var tokenPrice = 1000000000000000; // in wei
     var tokensAvailable = 750000;
+    var numberOfTokens;
 
     it('intializes the contract with the correct values', function() {
         return DappTokenSale.deployed().then(function(instance) {
@@ -30,7 +33,7 @@ contract('DappTokenSale', function(accounts) {
         }).then(function(instance){
             //grab token sale instance
             tokenSaleInstance = instance;
-            // provision 80% of all tokens to the token sale
+            // provision 75% of all tokens to the token sale
             return tokenInstance.transfer(tokenSaleInstance.address, tokensAvailable, {from: admin})
         }).then(function(receipt) {
             numberOfTokens = 10;

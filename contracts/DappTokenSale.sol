@@ -37,4 +37,13 @@ contract DappTokenSale{
         //trigger sell event
         emit Sell(msg.sender, _numberOfTokens);
     }
+
+    function endSale() public {
+        require(msg.sender == admin);
+        require(tokenContract.transfer(admin, tokenContract.balanceOf(this)));
+
+        // UPDATE: Let's not destroy the contract here
+        // Just transfer the balance to the admin
+        admin.transfer(address(this).balance);
+    }
 }

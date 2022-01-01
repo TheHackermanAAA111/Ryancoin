@@ -4,11 +4,11 @@ pragma solidity >=0.4.22 <0.9.0;
 contract DappToken{
 
     //Name
-    string public name = "DApp Token";
+    string public name = "RyanCoin";
     //Symbol
-    string public symbol = "DAPP";
+    string public symbol = "RYC";
     //standard
-    string public standard = "DApp TOken v1.0";
+    string public standard = "RyanCoin v1.0";
 
     // set the total number of tokens
     // read the total number of tokens

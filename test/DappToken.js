@@ -7,13 +7,13 @@ contract('DappToken', function(accounts) {
             tokenInstance = instance;
             return tokenInstance.name();
         }).then(function(name){
-            assert.equal(name, 'DApp Token', 'has the correct name');
+            assert.equal(name, 'RyanCoin', 'has the correct name');
             return tokenInstance.symbol();
         }).then(function(symbol){
-            assert.equal(symbol, 'DAPP', 'has the correct symbol');
+            assert.equal(symbol, 'RYC', 'has the correct symbol');
             return tokenInstance.standard();
         }).then(function(standard){
-            assert.equal(standard, 'DApp TOken v1.0', 'has the correct standard');
+            assert.equal(standard, 'RyanCoin v1.0', 'has the correct standard');
         });
     })
     it('sets the total supply upon deployment', function() {

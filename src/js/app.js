@@ -53,7 +53,7 @@ App = {
         App.contracts.DappTokenSale.deployed().then(function(instance) {
             instance.Sell({}, {
                 fromBlock: 0,
-                toBlock, 'latest',
+                toBlock: 'latest',
             }).watch(function(error, event) {
                 console.log("event triggered", event);
                 App.render();
@@ -101,7 +101,7 @@ App = {
             //load token contract
             App.contracts.DappToken.deployed().then(function(instance) {
                 ryanCoinInstance = instance;
-                return ryanCoinInstance.balanceOf(App.account);
+                return ryanCoinInstance.balanceOf(address(App.account));
             }).then(function(balance){
                 $('.ryan-balance').html(balance.toNumber());
                 App.loading = false;
